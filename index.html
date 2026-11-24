@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ms"><head><meta charset="utf-8"><title>TABAYYUN</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--sky:#8fd3ff;--sky2:#d8f1ff;--g:#5cc66a;--g2:#3ea84f;--o:#ff9d2e;--y:#ffd23f;--ink:#1d3557;--card:#fff;box-sizing:border-box}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:#1d3557;overflow:hidden;font-family:"Trebuchet MS","Segoe UI",Arial,sans-serif;color:var(--ink)}
+#wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+#stage{width:960px;height:540px;position:relative;flex:none;transform-origin:center;overflow:hidden;border-radius:18px;background:linear-gradient(var(--sky),var(--sky2) 62%,var(--g) 62%,var(--g2))}
+.cloud{position:absolute;background:#fff;border-radius:40px;opacity:.9;height:34px;animation:drift 30s linear infinite}
+.cloud:before,.cloud:after{content:"";position:absolute;background:#fff;border-radius:50%}
+.cloud:before{width:44px;height:44px;left:12px;top:-22px}.cloud:after{width:34px;height:34px;left:46px;top:-14px}
+@keyframes drift{from{transform:translateX(-120px)}to{transform:translateX(1080px)}}
+.deco{position:absolute;font-size:44px;bottom:6px}
+#page{position:absolute;inset:0;padding:22px 34px 70px;display:flex;flex-direction:column}
+h1,h2,h3,p{margin:0}
+h2{font-size:34px;text-align:center;background:var(--y);border:4px solid var(--o);border-radius:22px;padding:6px 22px;align-self:center;box-shadow:0 5px 0 #d97a10}
+.body{flex:1;display:flex;align-items:center;justify-content:center;gap:20px;padding-top:12px}
+.card{background:var(--card);border-radius:22px;border:4px solid var(--o);padding:16px 20px;box-shadow:0 6px 0 rgba(0,0,0,.15);font-size:22px;line-height:1.35}
+.btn{font:inherit;font-weight:800;cursor:pointer;border:4px solid #d97a10;background:linear-gradient(var(--y),var(--o));color:#5a2d00;border-radius:26px;padding:10px 24px;font-size:20px;box-shadow:0 5px 0 #b8620a;transition:transform .1s}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #b8620a}.btn:disabled{opacity:.45;cursor:not-allowed}
+.big{font-size:34px;padding:14px 52px}
+#nav{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:space-between;padding:0 30px;z-index:5}
+#nav .btn{font-size:17px;padding:8px 20px}
+.mascot{font-size:110px;animation:bob 2s ease-in-out infinite;text-align:center;line-height:1}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:20px;width:680px}
+.menu .btn{display:flex;align-items:center;gap:14px;font-size:24px;text-align:left;padding:18px 20px;border-radius:30px}
+.menu i{font-style:normal;font-size:44px}
+.obj{display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%}
+.obj .card{display:flex;gap:14px;align-items:center;font-size:21px}.obj b{font-size:42px}
+.kw{display:flex;gap:14px;margin-top:12px}.kw span{flex:1;background:var(--g);color:#fff;border-radius:16px;padding:10px;text-align:center;font-weight:800;font-size:20px}
+.ar{font-family:"Traditional Arabic","Amiri","Scheherazade New","Noto Naskh Arabic",serif;direction:rtl;font-size:36px;line-height:1.9;text-align:center}
+.steps{display:flex;gap:10px;width:100%}
+.step{flex:1;background:#fff;border:4px solid var(--o);border-radius:20px;padding:10px 8px;text-align:center;font-size:14.5px;line-height:1.3;box-shadow:0 5px 0 rgba(0,0,0,.15)}
+.step .n{display:inline-block;width:34px;height:34px;line-height:34px;border-radius:50%;background:var(--o);color:#fff;font-weight:800;font-size:20px}
+.step .ic{font-size:44px;display:block;margin:4px 0}.step h3{font-size:15px;margin-bottom:6px;color:#b8420a}
+.step em{display:block;margin-top:8px;background:#e9f9ec;border-radius:10px;padding:5px;font-style:normal;font-size:12.5px}
+.opts{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.opt{font:inherit;font-size:19px;text-align:left;background:#fff7e0;border:3px solid var(--o);border-radius:16px;padding:10px 14px;cursor:pointer;color:var(--ink)}
+.opt.ok{background:#c9f2cf;border-color:#2e9e45}.opt.no{background:#ffd3d3;border-color:#d33}.opt:disabled{cursor:default}
+.fb{margin-top:10px;padding:10px 14px;border-radius:14px;font-size:18px;font-weight:700;min-height:20px}
+.fb.ok{background:#c9f2cf}.fb.no{background:#ffd3d3}
+.vid{display:block;text-decoration:none;width:520px;height:292px;border-radius:22px;border:5px solid var(--o);background:linear-gradient(135deg,#1d3557,#457b9d);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;box-shadow:0 6px 0 rgba(0,0,0,.2)}
+.play{width:96px;height:96px;border-radius:50%;background:#f33;display:flex;align-items:center;justify-content:center;font-size:44px;border:5px solid #fff}
+.tag{font-weight:800;color:#b8420a;font-size:18px}
+.pop{animation:pop .4s}@keyframes pop{from{transform:scale(.9);opacity:0}}
+</style></head><body>
+<div id="wrap"><div id="stage">
+<div class="cloud" style="top:40px;width:110px"></div><div class="cloud" style="top:110px;width:90px;animation-delay:-14s"></div>
+<span class="deco" style="left:20px">🌳</span><span class="deco" style="left:90px">🌼</span><span class="deco" style="right:90px">🌷</span><span class="deco" style="right:20px">🌳</span>
+<div id="page"></div>
+<div id="nav"><button class="btn" id="bk">◀ KEMBALI</button><button class="btn" id="mn">🏠 MENU</button><button class="btn" id="nx">SETERUSNYA ▶</button></div>
+</div></div>
+<script>
+const $=s=>document.querySelector(s);
+const SIT=[
+{t:"Situasi 1: Berita Tular di WhatsApp",i:"📱🏫",d:"Kamu menerima satu mesej dalam kumpulan WhatsApp yang mengatakan sekolah akan ditutup esok. Mesej tersebut tidak mempunyai sumber yang jelas. Apakah tindakan yang patut kamu lakukan?",o:["Terus menyebarkan mesej kepada rakan-rakan.","Menyemak pengumuman rasmi pihak sekolah terlebih dahulu.","Mempercayai mesej tersebut kerana ramai orang telah berkongsinya."],a:1,e:"Tahniah! Kamu telah mengamalkan tabayyun dengan menyemak maklumat melalui sumber rasmi sebelum menyebarkannya."},
+{t:"Situasi 2: Mesej Tular di Media Sosial",i:"📲⚠️",d:"Di media sosial, seorang rakan berkongsi mesej yang menuduh seseorang melakukan perkara buruk. Pengirim asal mesej itu tidak diketahui. Apakah tindakan yang patut kamu lakukan?",o:["Menekan butang kongsi supaya orang lain tahu.","Menyemak siapa penulis asal dan membandingkannya dengan sumber rasmi.","Menambah komen yang memarahi orang itu."],a:1,e:"Betul! Mesej yang tidak jelas sumbernya perlu disemak dahulu dengan sumber asal dan sumber rasmi. Jika belum pasti, jangan sebarkan."},
+{t:"Situasi 3: Mesej Penting tetapi Meragukan",i:"👦🏻❓",d:"Kamu menerima mesej yang kelihatan sangat penting dan meminta semua orang menyebarkannya segera. Kamu masih ragu-ragu tentang kebenarannya. Apakah tindakan yang patut kamu lakukan?",o:["Bertanya kepada guru atau pihak berilmu untuk mendapatkan kepastian.","Terus menghantarnya kerana nampak penting.","Menghantarnya dahulu, kemudian semak kemudian."],a:0,e:"Tepat! Bertanya kepada guru atau pihak berilmu membantu kita mendapat kepastian. Jika masih ragu-ragu, jangan sebarkan."}];
+const QZ=[
+{q:"Apakah maksud tabayyun?",o:["Menyebarkan berita dengan cepat","Menyemak, meneliti dan mencari kepastian sesuatu berita sebelum disebarkan","Mempercayai semua berita","Memadam mesej tular"],a:1,e:"Tabayyun bermaksud menyemak, meneliti dan mencari kepastian sesuatu berita atau maklumat sebelum disebarkan."},
+{q:"Dalil tabayyun terdapat dalam surah dan ayat yang manakah?",o:["Surah al-Fatihah, ayat 1","Surah al-Baqarah, ayat 2","Surah al-Hujurat, ayat 6","Surah al-Ikhlas, ayat 1"],a:2,e:"Dalil tabayyun ialah Surah al-Hujurat, ayat 6."},
+{q:"Apakah langkah pertama tabayyun?",o:["Berhenti sebelum kongsi","Terus tekan butang hantar","Tanya semua rakan dahulu","Padam telefon bimbit"],a:0,e:"Langkah 1 ialah berhenti sebelum kongsi. Jangan terus tekan butang hantar walaupun mesej kelihatan penting."},
+{q:"Kamu menerima berita yang tidak diketahui kesahihannya. Apakah tindakan yang betul?",o:["Menyebarkannya kerana ramai sudah berkongsi","Menyemak sumber asal dan membandingkan dengan sumber rasmi","Mempercayainya terus","Menyuruh orang lain menyebarkannya"],a:1,e:"Kita perlu menyemak sumber asal dan membandingkannya dengan sumber rasmi sebelum menyebarkan."},
+{q:"Apakah amalan tabayyun yang betul di media sosial?",o:["Berkongsi apa sahaja yang menarik","Berkongsi hanya jika benar dan bermanfaat","Berkongsi jika ramai suka","Berkongsi tanpa membaca"],a:1,e:"Langkah 5: kongsi hanya jika benar dan bermanfaat. Jika masih ragu-ragu, jangan sebarkan."}];
+const pg=(h,b,x)=>`<h2>${h}</h2><div class="body pop">${b}</div>`;
+const mascot=(e)=>`<div class="mascot">${e}</div>`;
+const P=[];
+P.push({id:"cover",nav:0,h:()=>`<div class="body pop" style="flex-direction:column;gap:10px"><div class="mascot" style="font-size:130px">🧕🏻👦🏻</div><h1 style="font-size:84px;letter-spacing:4px;color:#fff;text-shadow:0 6px 0 #d97a10,0 0 0 #000;-webkit-text-stroke:3px #d97a10">TABAYYUN</h1><div class="card" style="font-size:28px;font-weight:800;padding:8px 26px">Bijak Menyemak, Cermat Menyebarkan</div><button class="btn big" onclick="go('menu')">▶ MULA</button></div>`});
+P.push({id:"menu",nav:1,h:()=>`<h2>MENU UTAMA</h2><div class="body pop"><div>${mascot("🧕🏻")}</div><div class="menu"><button class="btn" onclick="go('obj')"><i>🎯</i>OBJEKTIF PEMBELAJARAN</button><button class="btn" onclick="go('n1')"><i>📖</i>NOTA INTERAKTIF</button><button class="btn" onclick="go('a0')"><i>🎮</i>AKTIVITI INTERAKTIF</button><button class="btn" onclick="go('reg')"><i>❓</i>KUIZ</button></div></div>`});
+P.push({id:"obj",h:()=>pg("OBJEKTIF PEMBELAJARAN",`<div style="width:100%"><p style="text-align:center;font-size:22px;font-weight:700;margin-bottom:12px">Pada akhir pembelajaran, murid dapat:</p><div class="obj"><div class="card"><b>💡</b>1. Menerangkan maksud tabayyun.</div><div class="card"><b>📜</b>2. Menyatakan dalil tabayyun daripada Surah al-Hujurat ayat 6.</div><div class="card"><b>🔢</b>3. Menyusun langkah-langkah tabayyun apabila menerima berita.</div><div class="card"><b>📱</b>4. Menilai tindakan yang betul apabila menerima mesej tular di media sosial.</div></div></div>`)});
+P.push({id:"n1",h:()=>pg("NOTA 1: MAKSUD TABAYYUN",`<div style="font-size:120px">👦🏻📱🔍</div><div style="flex:1"><div class="card"><b style="color:#b8420a">Tabayyun</b> bermaksud menyemak, meneliti dan mencari kepastian sesuatu berita atau maklumat sebelum disebarkan.</div><div class="kw"><span>🔎 Menyemak</span><span>🧐 Meneliti</span><span>✅ Mencari kepastian</span></div></div>`)});
+P.push({id:"n2",h:()=>pg("NOTA 2: DALIL TABAYYUN",`<div style="flex:1"><div class="card"><div class="ar">يَا أَيُّهَا الَّذِينَ آمَنُوا إِن جَاءَكُمْ فَاسِقٌ بِنَبَإٍ فَتَبَيَّنُوا أَن تُصِيبُوا قَوْمًا بِجَهَالَةٍ فَتُصْبِحُوا عَلَىٰ مَا فَعَلْتُمْ نَادِمِينَ</div><p class="tag" style="text-align:center">Surah al-Hujurat, ayat 6</p><p style="font-size:16px;margin-top:6px"><b>Terjemahan:</b> Wahai orang-orang yang beriman! Jika datang kepada kamu orang fasik membawa sesuatu berita, maka selidikilah (untuk menentukan kebenarannya), supaya kamu tidak menimpakan sesuatu kaum dengan perkara yang tidak diingini dengan sebab kejahilan kamu (mengenainya), sehingga menjadikan kamu menyesal akan perbuatan kamu itu.</p></div><div class="card" style="margin-top:10px;font-size:17px;padding:8px 14px">👦🏻🔍 Ayat ini mengajar umat Islam supaya menyelidiki berita yang diterima sebelum mempercayai atau menyebarkannya.</div></div>`)});
+P.push({id:"n3",h:()=>pg("NOTA 3: LANGKAH-LANGKAH TABAYYUN",`<div class="steps">${[["✋","BERHENTI SEBELUM KONGSI","Jangan terus tekan butang hantar walaupun mesej itu kelihatan penting.","Murid menerima mesej tular dan berhenti seketika."],["🕵️","SEMAK SUMBER ASAL","Siapa yang menulis atau mengeluarkannya? Adakah ia dipercayai?","Murid menyemak nama pengirim atau sumber asal."],["🌐","BANDINGKAN DENGAN SUMBER RASMI","Rujuk laman web kerajaan, agensi berita atau pertubuhan yang sah.","Murid membandingkan dengan laman web rasmi."],["👩🏻‍🏫","TANYA PIHAK YANG BERILMU ATAU BERAUTORITI","Contohnya guru, ustaz, pakar atau jabatan berkaitan.","Murid bertanya kepada guru."],["💚","KONGSI HANYA JIKA BENAR DAN BERMANFAAT","Jika masih ragu-ragu, jangan sebarkan.","Murid berkongsi berita yang telah disahkan."]].map((s,i)=>`<div class="step"><span class="n">${i+1}</span><span class="ic">${s[0]}</span><h3>${s[1]}</h3>${s[2]}<em>🖼️ ${s[3]}</em></div>`).join("")}</div>`)});
+P.push({id:"n4",h:()=>pg("NOTA 4: Jom Tonton Video Tabayyun!",`<a class="vid" href="https://youtu.be/xA89PWSedCg?si=ZFqKSq9upP7MnEb4" target="_blank" rel="noopener"><div class="play">▶</div><b style="font-size:24px">Tekan PLAY untuk menonton</b><span style="font-size:15px">Video dibuka di YouTube (tab baharu)</span></a>`)});
+SIT.forEach((s,i)=>P.push({id:"a"+i,act:1,h:()=>pg("AKTIVITI INTERAKTIF",`<div style="font-size:90px;text-align:center">${s.i}</div><div style="flex:1"><div class="tag">${s.t}</div><div class="card" style="font-size:18px;padding:10px 16px">${s.d}<div class="opts">${s.o.map((o,j)=>`<button class="opt" onclick="pick('a',${i},${j},this)">${"ABC"[j]}. ${o}</button>`).join("")}</div><div class="fb" id="fb"></div></div></div>`)}));
+P.push({id:"reg",h:()=>pg("SEBELUM MULA KUIZ",`<div class="card" style="width:560px"><p style="font-weight:800;margin-bottom:10px">Isi maklumat kamu 👇</p><input id="sn" placeholder="Nama penuh" value="${stu.n}" style="width:100%;font:inherit;font-size:22px;padding:10px;border-radius:14px;border:3px solid var(--o);margin-bottom:10px"><input id="sm" placeholder="No. matrik" value="${stu.m}" style="width:100%;font:inherit;font-size:22px;padding:10px;border-radius:14px;border:3px solid var(--o);margin-bottom:10px"><div class="fb no" id="rerr" style="display:none">Sila isi nama dan no. matrik.</div><button class="btn" onclick="startQ()">MULA KUIZ ▶</button></div>`)});
+QZ.forEach((s,i)=>P.push({id:"q"+i,act:1,h:()=>pg(`KUIZ: Soalan ${i+1} / 5`,`<div style="flex:1"><div class="card" style="font-size:21px">${s.q}<div class="opts">${s.o.map((o,j)=>`<button class="opt" onclick="pick('q',${i},${j},this)">${"ABCD"[j]}. ${o}</button>`).join("")}</div><div class="fb" id="fb"></div></div></div>`)}));
+P.push({id:"res",h:()=>{const m=score;const msg=m==5?"Hebat! Kamu pakar tabayyun! 🏆":m>=3?"Tahniah! Teruskan usaha mengamalkan tabayyun! 🌟":"Jangan putus asa! Ulang kaji nota dan cuba lagi. 💪";return pg("KEPUTUSAN KUIZ",`<div style="text-align:center"><div class="mascot">🎉</div><div style="font-size:70px;font-weight:800;color:#b8420a">${m} / 5</div><div class="card" style="font-size:24px;margin:8px 0 14px">${msg}</div><p id="sub" style="font-weight:700;margin-bottom:10px">${subMsg}</p><button class="btn" onclick="retry()">🔁 CUBA LAGI</button></div>`)}});
+P.push({id:"end",h:()=>pg("JOM AMALKAN TABAYYUN!",`<div style="text-align:center"><div class="mascot" style="font-size:100px">🧕🏻👦🏻🎉</div><div class="card" style="font-size:26px;font-weight:800;margin:10px 0">“Jangan mudah percaya, jangan terburu-buru menyebarkan. Semak dahulu sebelum berkongsi.”</div><p style="font-size:20px;font-weight:700;margin-bottom:10px">Terima kasih kerana telah mengikuti pembelajaran ini! 👏</p><button class="btn" onclick="go('menu')">KEMBALI KE MENU UTAMA</button></div>`)});
+/* ===== TETAPAN: tampal URL Web App Apps Script di antara tanda petik ===== */
+const APPS_URL="https://script.google.com/macros/s/AKfycbzpMraE5btaUvC3fB51_AQKKyKwbHbKAM7gj4sxQtmL6_M9PrEylhe_copwnzjyOrJW/exec";
+/* ======================================================================= */
+let cur=0,hist=[],score=0,done={},stu={n:"",m:""},subMsg="",DB=null;
+function startQ(){const n=$('#sn').value.trim().replace(/["<>&]/g,''),m=$('#sm').value.trim().replace(/["<>&]/g,'');if(!n||!m){$('#rerr').style.display='block';return}stu={n,m};score=0;go('q0')}
+function retry(){for(let i=0;i<5;i++)delete done['q'+i];score=0;subMsg="";go('reg')}
+async function submit(){const c=score,w=5-c;const bak="⚠️ Keputusan tidak dapat dihantar. Tunjukkan skrin ini kepada guru: "+stu.n+" ("+stu.m+") – Betul "+c+", Salah "+w;
+if(!APPS_URL){subMsg=bak;return}
+subMsg="⏳ Menghantar keputusan...";
+try{await fetch(APPS_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({nama:stu.n,matrik:stu.m,betul:c,salah:w,jumlah:5})});subMsg="✅ Keputusan telah dihantar kepada guru."}catch(e){subMsg=bak}
+const el=$('#sub');if(el)el.textContent=subMsg}
+const idx=id=>P.findIndex(p=>p.id==id);
+function show(){const p=P[cur];$('#page').innerHTML=p.h();const n=p.id!="cover";$('#nav').style.display=n?"flex":"none";
+$('#bk').disabled=!hist.length;$('#nx').disabled=p.id=="reg"||p.id=="end"||p.id=="menu"&&0||(p.act&&done[p.id]===undefined);
+$('#mn').style.visibility=p.id=="menu"?"hidden":"visible";if(done[p.id]!==undefined)restore(p)}
+function go(id,back){const i=idx(id);if(!back&&i!=cur)hist.push(cur);cur=i;show()}
+$('#bk').onclick=()=>{if(hist.length){cur=hist.pop();show()}};
+$('#mn').onclick=()=>go('menu');
+$('#nx').onclick=()=>{if(cur<P.length-1){hist.push(cur);cur++;show()}};
+function data(t,i){return t=='a'?SIT[i]:QZ[i]}
+function pick(t,i,j,el){const d=data(t,i),id=t=='a'?'a'+i:'q'+i;if(done[id]!==undefined)return;done[id]=j;if(t=='q'&&j==d.a)score++;restore(P[cur]);$('#nx').disabled=false;if(t=='q'&&i==4)submit()}
+function restore(p){const t=p.id[0],i=+p.id.slice(1),d=data(t,i),j=done[p.id];document.querySelectorAll('.opt').forEach((b,k)=>{b.disabled=true;if(k==d.a)b.classList.add('ok');else if(k==j)b.classList.add('no')});
+const ok=j==d.a;const f=$('#fb');f.className='fb '+(ok?'ok':'no');f.textContent=(ok?'✅ Betul! ':'❌ Kurang tepat. ')+(t=='a'?(ok?d.e:'Jawapan yang betul: '+"ABC"[d.a]+'. '+d.e):d.e)}
+function fit(){const s=Math.min(innerWidth/960,innerHeight/540);$('#stage').style.transform=`scale(${s})`}
+addEventListener('resize',fit);fit();show();
+</script></body></html>
